@@ -8,7 +8,6 @@ REGION=${2:-ap-northeast-1}
 
 # create backend bucket
 aws s3api create-bucket --bucket $BACKEND_BUCKET --create-bucket-configuration LocationConstraint=$LEGION
-aws s3api put-bucket-versioning --bucket $BACKEND_BUCKET --versioning-configuration Status=Enabled
 aws s3api put-bucket-encryption --bucket $BACKEND_BUCKET --server-side-encryption-configuration '{
   "Rules": [
     {
